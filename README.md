@@ -4,6 +4,6 @@
 
 2.	update path / file names
 
-3.	example file for quick use can be edited in a text editor for quick and dirty.
+3.	example file for quick use can be edited in a text editor for quick and dirty (for file import).
 
 4.	run that sh*t.
