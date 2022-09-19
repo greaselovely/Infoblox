@@ -43,7 +43,7 @@ open(output_full_path, 'w').close()
 def InfoBloxAuthentication():
     username = input("[>]\tEnter your username: ")
     password = getpass.getpass("[>]\tEnter your password: ")
-    print("[!]\tWaiting for MFA...")
+    print("[!]\tWaiting for Authentication...")
     
     infoblox = requests.Session()
     infoblox.auth = (username, password)
