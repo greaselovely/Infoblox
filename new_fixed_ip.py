@@ -97,28 +97,28 @@ def isValidMACAddress(mac):
     if (str == None): return False
     return True if re.search(p, mac) else False
 
-def formatMACAddressforInfoBlox(mac):
+def formatMACAddress(mac):
     """
     We take the MAC once it's passed regex check, and instead of making 
     the user format the mac or even check the format, we just strip it down 
     and reformat it regardless of how it's sent so that it is correct for InfoBlox. 
 
-    >>> formatMACAddressforInfoBlox("FE-89-D2-16-0D-C9")
+    >>> formatMACAddress("FE-89-D2-16-0D-C9")
     FE:89:D2:16:0D:C9
 
-    >>> formatMACAddressforInfoBlox("FE.89.D2.16.0D.C9")
+    >>> formatMACAddress("FE.89.D2.16.0D.C9")
     FE:89:D2:16:0D:C9    
 
-    >>> formatMACAddressforInfoBlox("FE:89:D2:16:0D:C9")
+    >>> formatMACAddress("FE:89:D2:16:0D:C9")
     FE:89:D2:16:0D:C9
 
-    >>> formatMACAddressforInfoBlox("FE89.D216.0DC9")
+    >>> formatMACAddress("FE89.D216.0DC9")
     FE:89:D2:16:0D:C9
 
-    >>> formatMACAddressforInfoBlox("FE89:D216:0DC9")
+    >>> formatMACAddress("FE89:D216:0DC9")
     FE:89:D2:16:0D:C9
 
-    >>> formatMACAddressforInfoBlox("FE89-D216-0DC9")
+    >>> formatMACAddress("FE89-D216-0DC9")
     FE:89:D2:16:0D:C9
 
     """
@@ -180,7 +180,7 @@ def main():
     # Is the MAC we are given look correct?
     if isValidMACAddress(mac):
         # If so, reformat it for InfoBlox Fixed IP
-        mac = formatMACAddressforInfoBlox(mac)
+        mac = formatMACAddress(mac)
     else:
         print(f"[!]\t{mac} - Invalid MAC Address\n\n")
         sys.exit()
